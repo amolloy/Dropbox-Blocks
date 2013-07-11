@@ -6,7 +6,7 @@
 //  Copyright (c) 2011 Andy Molloy. All rights reserved.
 //
 
-#import "DropboxSDK"
+#import "DropboxSDK.h"
 #import "BlocksKit/BKGlobals.h"
 
 typedef void(^BGDBRestClientCompletionHandler)(DBMetadata*);
