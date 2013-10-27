@@ -7,7 +7,7 @@
 //
 
 #import "DBRestClient+Blocks.h"
-#import "BlocksKit/NSObject+AssociatedObjects.h"
+#import <objc/objc-runtime.h>
 
 @interface DBRestClient (BabyGrowBlocksPrivate)
 @property (nonatomic, readonly) NSMutableDictionary* handlers;
@@ -123,11 +123,11 @@ withCompletionHandler:(BGDBRestClientSearchCompletionHandler)completionHandler
 
 -(NSMutableDictionary*)handlers
 {
-   NSMutableDictionary* handlers = [self associatedValueForKey:kDBRestClientBlockDictionaryKey];
+   NSMutableDictionary* handlers = objc_getAssociatedObject(self, kDBRestClientBlockDictionaryKey);
    if (!handlers) 
    {
       handlers = [NSMutableDictionary dictionary];
-      [self associateValue:handlers withKey:kDBRestClientBlockDictionaryKey];
+	  objc_setAssociatedObject(self, kDBRestClientBlockDictionaryKey, handlers, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
    }
 
    return handlers;

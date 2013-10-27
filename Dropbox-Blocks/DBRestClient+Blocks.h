@@ -7,7 +7,6 @@
 //
 
 #import "DropboxSDK.h"
-#import "BlocksKit/BKGlobals.h"
 
 typedef void(^BGDBRestClientCompletionHandler)(DBMetadata*);
 typedef void(^BGDBRestClientFailedHandler)(NSError*);
