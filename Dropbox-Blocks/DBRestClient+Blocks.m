@@ -7,7 +7,8 @@
 //
 
 #import "DBRestClient+Blocks.h"
-#import <objc/objc-runtime.h>
+#import <objc/runtime.h>
+#import <objc/message.h>
 
 @interface DBRestClient (BabyGrowBlocksPrivate)
 @property (nonatomic, readonly) NSMutableDictionary* handlers;
