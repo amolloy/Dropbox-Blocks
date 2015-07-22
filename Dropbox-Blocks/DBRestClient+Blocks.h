@@ -6,7 +6,7 @@
 //  Copyright (c) 2011 Andy Molloy. All rights reserved.
 //
 
-#import "DropboxSDK.h"
+#import "DropboxSDK/DropboxSDK.h"
 
 typedef void(^BGDBRestClientCompletionHandler)(DBMetadata*);
 typedef void(^BGDBRestClientFailedHandler)(NSError*);
